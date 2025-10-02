@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExciteStage.Domain.Entities
 {
     public sealed class PortfolioBet
     {
-        public string BetType { get; set; }
+        public int Id { get; set; } // NUEVO: Identificador único
+        public string Type { get; set; } // NUEVO: Tipo de apuesta ("Core", "Safety", etc.)
         public string Market { get; set; }
         public double Odds { get; set; }
         public double StakePercent { get; set; }
@@ -16,9 +13,10 @@ namespace ExciteStage.Domain.Entities
         public double ExpectedReturn { get; set; }
         public string Reasoning { get; set; }
 
-        public PortfolioBet(string betType, string market, double odds, double stakePercent, double confidence, string reasoning)
+        public PortfolioBet(int id, string type, string market, double odds, double stakePercent, double confidence, string reasoning)
         {
-            BetType = betType;
+            Id = id;
+            Type = type;
             Market = market;
             Odds = odds;
             StakePercent = stakePercent;
