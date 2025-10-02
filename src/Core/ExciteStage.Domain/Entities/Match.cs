@@ -1,16 +1,23 @@
-﻿namespace ExciteStage.Domain.Entities
+﻿using System;
+using System.Collections.Generic;
+
+namespace ExciteStage.Domain.Entities
 {
     public sealed class Match
     {
         public int Id { get; set; }
         public string HomeTeam { get; set; }
-        public string AwayTeam { get; set; }    
+        public string AwayTeam { get; set; }
+        public DateTime MatchDate { get; set; } // NUEVO
         public int Altitude { get; set; }
         public int TravelDistance { get; set; }
         public int RefereeBias { get; set; }
         public string WeatherImpact { get; set; }
 
-        public Match(int id, string homeTeam, string awayTeam, int altitude = 0, int travelDistance = 0, int refereeBias = 0, string weatherImpact = "Unknown")
+        // NUEVO: Relación con portfolios
+        public ICollection<BettingPortfolio> Portfolios { get; set; } = new List<BettingPortfolio>();
+
+        public Match(int id, string homeTeam, string awayTeam, DateTime matchDate, int altitude = 0, int travelDistance = 0, int refereeBias = 0, string weatherImpact = "Unknown")
         {
             if (string.IsNullOrWhiteSpace(homeTeam))
                 throw new ArgumentException("HomeTeam cannot be empty.", nameof(homeTeam));
@@ -28,6 +35,7 @@
             Id = id;
             HomeTeam = homeTeam;
             AwayTeam = awayTeam;
+            MatchDate = matchDate;
             Altitude = altitude;
             TravelDistance = travelDistance;
             RefereeBias = refereeBias;
@@ -38,7 +46,7 @@
 
         public override string ToString()
         {
-            return $"{HomeTeam} vs {AwayTeam}, Alt: {Altitude}m, Dist: {TravelDistance}km, RefBias: {RefereeBias}, Weather: {WeatherImpact}";
-        }   
+            return $"{HomeTeam} vs {AwayTeam} ({MatchDate:yyyy-MM-dd}), Alt: {Altitude}m, Dist: {TravelDistance}km, RefBias: {RefereeBias}, Weather: {WeatherImpact}";
+        }
     }
 }

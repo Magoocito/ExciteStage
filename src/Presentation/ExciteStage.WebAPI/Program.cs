@@ -1,23 +1,26 @@
+using ExciteStage.Infrastructure.Persistance.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Registrar servicios de persistencia (incluye AutoMapper)
+builder.Services.ConfigurePersistenceApp(builder.Configuration);
+
+// Registrar servicios de aplicación (si tienes mapeos/handlers en Application)
+//builder.Services.ConfigureApplicationApp();
+//builder.Services.ConfigureCorsPolicy();
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

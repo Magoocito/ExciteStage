@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ExciteStage.Domain.Entities
+﻿namespace ExciteStage.Domain.Entities
 {
     public sealed class BettingPortfolio
     {
         public int Id { get; set; }
         public int MatchId { get; set; }
+
+        // Relación con el partido
+        public Match Match { get; set; }
+
         public List<PortfolioBet> Bets { get; private set; } = new();
         public double TotalStakePercent => Bets.Sum(b => b.StakePercent);
+        public double ExpectedReturn => Bets.Sum(b => b.ExpectedReturn); // NUEVO
+
         public DateTime CreatedAt { get; set; }
 
         public BettingPortfolio(int matchId)
