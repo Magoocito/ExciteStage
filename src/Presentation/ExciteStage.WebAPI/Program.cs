@@ -1,4 +1,4 @@
-using ExciteStage.Infrastructure.Persistance.Services;
+using ExciteStage.Infrastructure.Persistance.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using RestSharp;
 
-namespace ExciteStage.Infrastructure.External
+namespace ExciteStage.Infrastructure.Services.External
 {
     public class ApiFootballClient
     {
