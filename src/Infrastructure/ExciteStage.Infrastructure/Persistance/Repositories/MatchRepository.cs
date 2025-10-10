@@ -4,7 +4,7 @@ using ExciteStage.Infrastructure.Persistance.Context;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExciteStage.Infrastructure.Repositories
+namespace ExciteStage.Infrastructure.Persistance.Repositories
 {
     public class MatchRepository : IMatchRepository
     {

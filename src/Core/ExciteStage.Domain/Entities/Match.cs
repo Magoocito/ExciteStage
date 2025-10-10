@@ -8,16 +8,18 @@ namespace ExciteStage.Domain.Entities
         public int Id { get; set; }
         public string HomeTeam { get; set; }
         public string AwayTeam { get; set; }
-        public DateTime MatchDate { get; set; } // NUEVO
+        public DateTime MatchDate { get; set; }
         public int Altitude { get; set; }
         public int TravelDistance { get; set; }
         public int RefereeBias { get; set; }
         public string WeatherImpact { get; set; }
-
-        // NUEVO: Relación con portfolios
         public ICollection<BettingPortfolio> Portfolios { get; set; } = new List<BettingPortfolio>();
 
-        public Match(int id, string homeTeam, string awayTeam, DateTime matchDate, int altitude = 0, int travelDistance = 0, int refereeBias = 0, string weatherImpact = "Unknown")
+        // EF Core requires a parameterless constructor
+        private Match() { }
+
+        // Main constructor: MatchDate is optional
+        public Match(int id, string homeTeam, string awayTeam, int altitude = 0, int travelDistance = 0, DateTime? matchDate = null, int refereeBias = 0, string weatherImpact = "Unknown")
         {
             if (string.IsNullOrWhiteSpace(homeTeam))
                 throw new ArgumentException("HomeTeam cannot be empty.", nameof(homeTeam));
@@ -35,11 +37,17 @@ namespace ExciteStage.Domain.Entities
             Id = id;
             HomeTeam = homeTeam;
             AwayTeam = awayTeam;
-            MatchDate = matchDate;
+            MatchDate = matchDate ?? DateTime.UtcNow.AddDays(1); // Default if not provided
             Altitude = altitude;
             TravelDistance = travelDistance;
             RefereeBias = refereeBias;
             WeatherImpact = weatherImpact;
+        }
+
+        // Optional: Static factory method for more control
+        public static Match Create(string homeTeam, string awayTeam, DateTime matchDate, int altitude = 0, int travelDistance = 0, int refereeBias = 0, string weatherImpact = "Unknown")
+        {
+            return new Match(0, homeTeam, awayTeam, altitude, travelDistance, matchDate, refereeBias, weatherImpact);
         }
 
         public bool IsHighAltitude() => Altitude > 2500;

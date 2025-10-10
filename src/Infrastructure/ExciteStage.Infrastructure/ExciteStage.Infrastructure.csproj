@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Models\" />
-    <Folder Include="Persistance\SQLite\" />
+    <Folder Include="ML\Data\" />
+    <Folder Include="ML\Models\" />
+    <Folder Include="ML\Pipeline\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +18,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.9" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0-rc.1.25451.107" />
+    <PackageReference Include="Microsoft.Extensions.ML" Version="3.0.1" />
     <PackageReference Include="Microsoft.ML" Version="5.0.0-preview.25373.1" />
     <PackageReference Include="Microsoft.ML.FastTree" Version="5.0.0-preview.25373.1" />
     <PackageReference Include="RestSharp" Version="112.1.1-alpha.0.4" />

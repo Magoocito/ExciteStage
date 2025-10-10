@@ -14,6 +14,10 @@
 
         public DateTime CreatedAt { get; set; }
 
+        // Constructor privado para EF Core
+        private BettingPortfolio() { }
+
+        // Constructor público para uso normal
         public BettingPortfolio(int matchId)
         {
             MatchId = matchId;

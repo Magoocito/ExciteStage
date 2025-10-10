@@ -4,7 +4,7 @@ using ExciteStage.Infrastructure.Persistance.Context;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExciteStage.Infrastructure.Repositories
+namespace ExciteStage.Infrastructure.Persistance.Repositories
 {
     public class PortfolioRepository : IPortfolioRepository
     {
@@ -36,7 +36,7 @@ namespace ExciteStage.Infrastructure.Repositories
 
         public async Task CreateAsync(BettingPortfolio portfolio, CancellationToken ct)
         {
-            var entity = _mapper.Map<Infrastructure.Persistance.Entities.BettingPortfolioEntity>(portfolio);
+            var entity = _mapper.Map<Entities.BettingPortfolioEntity>(portfolio);
             await _context.Portfolios.AddAsync(entity, ct);
         }
 

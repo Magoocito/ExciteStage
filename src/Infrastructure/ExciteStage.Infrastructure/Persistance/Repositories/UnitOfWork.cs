@@ -1,7 +1,7 @@
 ﻿using ExciteStage.Application.Repositories;
 using ExciteStage.Infrastructure.Persistance.Context;
 
-namespace ExciteStage.Infrastructure.Repositories
+namespace ExciteStage.Infrastructure.Persistance.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -17,7 +17,7 @@ namespace ExciteStage.Infrastructure.Repositories
             await using var transaction = await _context.Database.BeginTransactionAsync(ct);
             try
             {
-                var success = (await _context.SaveChangesAsync(ct)) > 0;
+                var success = await _context.SaveChangesAsync(ct) > 0;
                 await transaction.CommitAsync(ct);
                 return success;
             }

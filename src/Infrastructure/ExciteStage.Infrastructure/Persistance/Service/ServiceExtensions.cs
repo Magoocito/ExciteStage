@@ -1,13 +1,13 @@
 ﻿using ExciteStage.Application.Repositories;
 using ExciteStage.Infrastructure.Persistance.Context;
-using ExciteStage.Infrastructure.Repositories;
+using ExciteStage.Infrastructure.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 
-namespace ExciteStage.Infrastructure.Persistance.Services
+namespace ExciteStage.Infrastructure.Persistance.Service
 {
     public static class ServiceExtensions
     {

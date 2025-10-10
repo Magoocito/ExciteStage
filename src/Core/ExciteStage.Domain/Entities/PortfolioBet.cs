@@ -4,8 +4,8 @@ namespace ExciteStage.Domain.Entities
 {
     public sealed class PortfolioBet
     {
-        public int Id { get; set; } // NUEVO: Identificador único
-        public string Type { get; set; } // NUEVO: Tipo de apuesta ("Core", "Safety", etc.)
+        public int Id { get; set; }
+        public string Type { get; set; }
         public string Market { get; set; }
         public double Odds { get; set; }
         public double StakePercent { get; set; }
@@ -13,9 +13,8 @@ namespace ExciteStage.Domain.Entities
         public double ExpectedReturn { get; set; }
         public string Reasoning { get; set; }
 
-        public PortfolioBet(int id, string type, string market, double odds, double stakePercent, double confidence, string reasoning)
+        public PortfolioBet(string type, string market, double odds, double stakePercent, double confidence, string reasoning)
         {
-            Id = id;
             Type = type;
             Market = market;
             Odds = odds;
@@ -24,5 +23,7 @@ namespace ExciteStage.Domain.Entities
             Reasoning = reasoning;
             ExpectedReturn = (odds - 1) * stakePercent;
         }
+
+        private PortfolioBet() { }
     }
 }
