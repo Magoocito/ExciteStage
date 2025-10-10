@@ -1,4 +1,5 @@
-﻿using Microsoft.ML;
+﻿using ExciteStage.Infrastructure.ML.Features;
+using Microsoft.ML;
 
 namespace ExciteStage.Infrastructure.ML
 {
