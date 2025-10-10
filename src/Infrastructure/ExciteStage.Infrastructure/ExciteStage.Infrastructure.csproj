@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="ML\Data\" />
     <Folder Include="ML\Models\" />
-    <Folder Include="ML\Pipeline\" />
   </ItemGroup>
 
   <ItemGroup>
