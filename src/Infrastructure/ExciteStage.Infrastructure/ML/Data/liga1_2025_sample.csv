@@ -1,0 +1,26 @@
+Date,HomeTeam,AwayTeam,HomeGoals,AwayGoals,HomeAltitude,TravelDistance,RefereeBias,WeatherImpact,IsHighAltitude,HomeWin,PPG,CS,BTTS,xGF
+2025-10-12,Ayacucho,ADT,2,2,2650,800,0,sunny,1,0.5,0.87,20,47,1.10
+2025-10-12,Alianza Atlético,Santa Rosa PNP,1,0,0,500,0,sunny,0,1,1.61,45,32,1.32
+2025-10-12,Real Garcilaso,Comerciantes Unidos,1,1,3400,1200,0,sunny,1,0.5,1.94,39,48,1.28
+2025-10-13,UTC Cajamarca,Cienciano,0,2,2750,900,0,sunny,1,0,0.84,26,45,1.28
+2025-10-13,Juan Pablo II College,Deportivo Garcilaso,0,1,0,600,0,sunny,0,0,1.00,35,35,1.25
+2025-10-14,Melgar,Alianza Universidad,0,0,2335,700,0,sunny,0,0.5,1.58,23,68,1.55
+Universitario,NA,NA,NA,NA,0,0,0,sunny,0,NA,2.30,47,43,1.85
+Real Garcilaso,NA,NA,NA,NA,3400,0,0,sunny,1,NA,1.94,39,48,1.28
+Alianza Lima,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.83,50,40,1.63
+Sporting Cristal,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.80,40,50,1.58
+Alianza Atlético,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.61,45,32,1.32
+FBC Melgar,NA,NA,NA,NA,2335,0,0,sunny,0,NA,1.58,23,68,1.55
+Deportivo Garcilaso,NA,NA,NA,NA,3400,0,0,sunny,1,NA,1.55,35,48,1.24
+Sport Huancayo,NA,NA,NA,NA,3259,0,0,sunny,1,NA,1.45,23,55,1.57
+ADT,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.45,26,52,1.52
+Cienciano,NA,NA,NA,NA,3400,0,0,sunny,1,NA,1.37,23,63,1.65
+Santa Rosa PNP,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.31,7,72,1.25
+Atlético Grau,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.23,30,57,1.38
+Sport Boys,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.07,13,53,1.22
+Juan Pablo II College,NA,NA,NA,NA,0,0,0,sunny,0,NA,1.00,35,35,1.25
+Comerciantes Unidos,NA,NA,NA,NA,2650,0,0,sunny,1,NA,0.90,17,57,1.08
+Ayacucho FC,NA,NA,NA,NA,2650,0,0,sunny,1,NA,0.87,20,47,1.10
+UTC Cajamarca,NA,NA,NA,NA,2750,0,0,sunny,1,NA,0.84,26,45,1.28
+Alianza Universidad,NA,NA,NA,NA,0,0,0,sunny,0,NA,0.80,17,53,1.37
+Deportivo Binacional,NA,NA,NA,NA,3825,0,0,sunny,1,NA,1.00,30,57,1.27

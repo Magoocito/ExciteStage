@@ -1,6 +1,7 @@
 ﻿using ExciteStage.Application.Repositories;
 using ExciteStage.Infrastructure.Persistance.Context;
 using ExciteStage.Infrastructure.Persistance.Repositories;
+using ExciteStage.Infrastructure.Services.ML;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,8 @@ namespace ExciteStage.Infrastructure.Persistance.Service
         {
             // Registrar todos los perfiles de AutoMapper en el ensamblado actual
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddAutoMapper(typeof(MLMappingProfile));
 
             var connectionString = configuration.GetConnectionString("Database");
             services.AddDbContext<AppDbContext>(options =>

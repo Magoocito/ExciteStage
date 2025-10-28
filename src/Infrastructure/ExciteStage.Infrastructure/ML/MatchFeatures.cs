@@ -4,7 +4,7 @@ namespace ExciteStage.Infrastructure.ML.Features
 {
     /// <summary>
     /// Clase de características (features) para el modelo ML.NET.
-    /// Debe coincidir con las columnas del CSV de entrenamiento.
+    /// Contiene SOLO las features de entrada, NO el resultado.
     /// </summary>
     public class MatchFeatures
     {
@@ -28,7 +28,7 @@ namespace ExciteStage.Infrastructure.ML.Features
         public float WeatherImpactEncoded { get; set; } // 0-1
 
         // ========================================
-        // Características adicionales (opcionales)
+        // Características adicionales
         // ========================================
 
         [LoadColumn(5)]
@@ -40,7 +40,32 @@ namespace ExciteStage.Infrastructure.ML.Features
         [LoadColumn(7)]
         public float HeadToHeadWins { get; set; } // Victorias históricas home vs away
 
-        // NOTA: Si agregas más columnas, actualiza los índices [LoadColumn]
-        // y asegúrate de que el CSV de entrenamiento las incluya
+        [LoadColumn(8)]
+        public float PPG { get; set; } // Points per game
+
+        [LoadColumn(9)]
+        public float CS { get; set; } // Clean sheets
+
+        [LoadColumn(10)]
+        public float BTTS { get; set; } // Both teams to score
+
+        [LoadColumn(11)]
+        public float xGF { get; set; } // Expected goals for
+    }
+
+    /// <summary>
+    /// Clase para datos de entrenamiento que incluye el resultado.
+    /// Se usa SOLO durante el entrenamiento.
+    /// </summary>
+    public class MatchTrainingData : MatchFeatures
+    {
+        [LoadColumn(12)]
+        public float HomeWin { get; set; } // 0, 0.5, 1 (resultado real)
+
+        [LoadColumn(13)]
+        public float HomeGoals { get; set; }
+
+        [LoadColumn(14)]
+        public float AwayGoals { get; set; }
     }
 }

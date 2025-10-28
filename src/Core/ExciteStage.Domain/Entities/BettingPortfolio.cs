@@ -9,8 +9,8 @@
         public Match Match { get; set; }
 
         public List<PortfolioBet> Bets { get; private set; } = new();
-        public double TotalStakePercent => Bets.Sum(b => b.StakePercent);
-        public double ExpectedReturn => Bets.Sum(b => b.ExpectedReturn); // NUEVO
+        public decimal TotalStakePercent => Bets.Sum(b => b.StakePercent);
+        public decimal ExpectedReturn => Bets.Sum(b => b.ExpectedReturn);
 
         public DateTime CreatedAt { get; set; }
 
@@ -26,12 +26,12 @@
 
         public void AddBet(PortfolioBet bet)
         {
-            if (TotalStakePercent + bet.StakePercent > 0.15)
+            if (TotalStakePercent + bet.StakePercent > 0.15m)
                 throw new InvalidOperationException("Portfolio exceeds 15% bankroll limit");
             Bets.Add(bet);
         }
 
-        public double CalculateWorstCaseScenario()
+        public decimal CalculateWorstCaseScenario()
         {
             return Bets.Min(b => b.ExpectedReturn);
         }
